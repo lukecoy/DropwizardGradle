@@ -1,23 +1,25 @@
-package com.lukecoy.hello;
+package com.lukecoy.hello.service;
 
 import com.hubspot.dropwizard.guice.GuiceBundle;
+import com.lukecoy.hello.config.HelloGuiceModule;
+import com.lukecoy.hello.config.HelloConfiguration;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-public class HelloApplication extends Application<HelloConfiguration> {
+public class HelloService extends Application<HelloConfiguration> {
 
-  private GuiceBundle<HelloConfiguration> guiceBundle;
+  private static final String AUTO_CONFIG_PACKAGE = "com.lukecoy.hello";
 
   public static void main(String[] args) throws Exception {
-    new HelloApplication().run(args);
+    new HelloService().run(args);
   }
 
   @Override
   public void initialize(Bootstrap<HelloConfiguration> bootstrap) {
-    guiceBundle = GuiceBundle.<HelloConfiguration>newBuilder()
+    GuiceBundle<HelloConfiguration> guiceBundle = GuiceBundle.<HelloConfiguration>newBuilder()
         .addModule(new HelloGuiceModule())
-        .enableAutoConfig(getClass().getPackage().getName())
+        .enableAutoConfig(AUTO_CONFIG_PACKAGE)
         .setConfigClass(HelloConfiguration.class)
         .build();
 

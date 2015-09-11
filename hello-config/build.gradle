@@ -1,0 +1,8 @@
+project.ext {
+    sqliteJdbcVersion = '3.7.2'
+}
+
+dependencies {
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: sqliteJdbcVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: '0.8.2'
+}

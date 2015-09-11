@@ -1,16 +1,6 @@
 apply plugin: 'application'
 
-mainClassName = "com.lukecoy.hello.HelloApplication"
-
-project.ext {
-    dropwizardVersion = '0.8.2'
-    guiceDropwizardVersion = '0.8.2.0'
-}
-
-dependencies {
-    compile project(':hello-health')
-    compile project(':hello-resource')
-}
+mainClassName = "com.lukecoy.hello.service.HelloService"
 
 allprojects {
     group = 'com.lukecoy'
@@ -22,10 +12,19 @@ allprojects {
         mavenCentral()
     }
 
+    project.ext {
+        dropwizardVersion = '0.8.2'
+        guiceDropwizardVersion = '0.8.2.0'
+    }
+
     dependencies {
         compile group: 'com.hubspot.dropwizard', name: 'dropwizard-guice', version: guiceDropwizardVersion
         compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
     }
+}
+
+dependencies {
+    compile project('hello-service')
 }
 
 run {

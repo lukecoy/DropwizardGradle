@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':hello-config')
+    compile project(':hello-health')
+    compile project(':hello-data')
+}

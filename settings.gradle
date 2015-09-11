@@ -1,3 +1,4 @@
+include 'hello-config'
 include 'hello-health'
-include 'hello-resource'
-
+include 'hello-service'
+include 'hello-data'
