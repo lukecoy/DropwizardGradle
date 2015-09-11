@@ -1,6 +1,6 @@
 # Hello
 
-*A sneakily simple `"Hello, {}!"` Java REST service, well under 300 SLOC*
+*A robust, simple `"Hello, {}!"` Java REST service*
 
 ###Motivation
 > "Java? But there's so much boilerplate.."
