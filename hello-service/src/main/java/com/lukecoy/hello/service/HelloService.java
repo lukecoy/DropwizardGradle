@@ -18,7 +18,7 @@ public class HelloService extends Application<HelloConfiguration> {
   @Override
   public void initialize(Bootstrap<HelloConfiguration> bootstrap) {
     GuiceBundle<HelloConfiguration> guiceBundle = GuiceBundle.<HelloConfiguration>newBuilder()
-        .addModule(new HelloGuiceModule())
+        .addModule(new HelloServiceGuiceModule())
         .enableAutoConfig(AUTO_CONFIG_PACKAGE)
         .setConfigClass(HelloConfiguration.class)
         .build();

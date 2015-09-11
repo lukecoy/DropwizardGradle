@@ -3,16 +3,13 @@ package com.lukecoy.hello.service;
 import com.google.inject.Inject;
 import com.lukecoy.hello.data.NameDao;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.Instant;
+import java.util.List;
 
 @Path("/hello")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class HelloResource {
 
   private final NameDao nameDao;
@@ -23,8 +20,17 @@ public class HelloResource {
   }
 
   @GET
-  public Response ok() {
-    return Response.ok().build();
+  @Path("/name-range")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<String> getNameRange(@QueryParam("from") int from,
+                                   @QueryParam("to") int to) {
+    return nameDao.findNamesBetween(from, to);
+  }
+
+  @PUT
+  public Response putName(@QueryParam("name") String name) {
+    nameDao.insert(name, Instant.now().getEpochSecond());
+    return Response.ok(String.format("Hello, %s!", name)).build();
   }
 
 }
