@@ -1,20 +1,29 @@
-apply plugin: 'java'
 apply plugin: 'application'
 
-group = 'com.lukecoy'
-version = '1.0-SNAPSHOT'
 mainClassName = "com.lukecoy.HelloWorldApplication"
 
 project.ext {
     dropwizardVersion = '0.8.2'
 }
 
-repositories {
-    mavenCentral()
+dependencies {
+    compile project(':hello-health')
+    compile project(':hello-resource')
 }
 
-dependencies {
-    compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+allprojects {
+    group = 'com.lukecoy'
+    version = '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    }
 }
 
 run {

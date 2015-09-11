@@ -1,10 +1,9 @@
 package com.lukecoy;
 
 import com.lukecoy.health.DatabaseHealthCheck;
-import io.dropwizard.Application;
-import io.dropwizard.Configuration;
-import io.dropwizard.setup.Environment;
 import com.lukecoy.resource.HelloWorldResource;
+import io.dropwizard.Application;
+import io.dropwizard.setup.Environment;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
@@ -13,7 +12,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
   }
 
   @Override
-  public void run(HelloWorldConfiguration configuration, Environment environment) throws Exception {;
+  public void run(HelloWorldConfiguration configuration, Environment environment) throws Exception {
     environment.jersey().register(new HelloWorldResource());
     environment.healthChecks().register("Database", new DatabaseHealthCheck());
   }
