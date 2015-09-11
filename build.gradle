@@ -1,9 +1,10 @@
 apply plugin: 'application'
 
-mainClassName = "com.lukecoy.HelloWorldApplication"
+mainClassName = "com.lukecoy.hello.HelloApplication"
 
 project.ext {
     dropwizardVersion = '0.8.2'
+    guiceDropwizardVersion = '0.8.2.0'
 }
 
 dependencies {
@@ -22,6 +23,7 @@ allprojects {
     }
 
     dependencies {
+        compile group: 'com.hubspot.dropwizard', name: 'dropwizard-guice', version: guiceDropwizardVersion
         compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
     }
 }
