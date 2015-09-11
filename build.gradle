@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+group = 'com.lukecoy'
+version = '1.0-SNAPSHOT'
+mainClassName = "com.lukecoy.HelloWorldApplication"
+
+project.ext {
+    dropwizardVersion = '0.8.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+}
+
+run {
+    args 'server', 'config.yaml'
+}
