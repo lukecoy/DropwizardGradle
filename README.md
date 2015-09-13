@@ -1,6 +1,6 @@
 # Hello
 
-*A robust, simple `"Hello, {}!"` Java REST service*
+*A robust, simple, visitor check-in Java REST service*
 
 ###Motivation
 > "Java? But there's so much boilerplate.."
