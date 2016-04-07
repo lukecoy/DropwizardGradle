@@ -27,4 +27,4 @@
 - [Dropwizard](https://github.com/dropwizard/dropwizard) for web-appin'
 - [Gradle](https://github.com/gradle/gradle) for buildin'
 - [Guice](https://github.com/google/guice) for dependency-injectin'
-- [SqlLite](https://www.sqlite.org/) for databasin'
+- [Sqlite](https://www.sqlite.org/) for databasin'
