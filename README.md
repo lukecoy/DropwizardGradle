@@ -7,15 +7,19 @@
 
 ###Use
 ```bash
-> brew install gradle # if you don't have gradle
-
 > git clone https://github.com/lukecoy/Hello.git
 > cd Hello/
+
+# Make a sqlite db
+> sqlite3 hello.db
+  > CREATE TABLE name(name, date_met INTEGER);
+
 > gradle run
 ```
+> Note: You'll need to be running Java 8.  
 
 ###Resources
-######`[GET] /hello/name-range?from=[int]&to=[int]`
+######`[GET] /hello/name-range?from=[int(epoch)]&to=[int(epoch)]`
 
 ######`[PUT] /hello?name=[String]`
 
@@ -23,4 +27,4 @@
 - [Dropwizard](https://github.com/dropwizard/dropwizard) for web-appin'
 - [Gradle](https://github.com/gradle/gradle) for buildin'
 - [Guice](https://github.com/google/guice) for dependency-injectin'
-- [SqlLite](https://www.sqlite.org/) for databasin'
+- [Sqlite](https://www.sqlite.org/) for databasin'
