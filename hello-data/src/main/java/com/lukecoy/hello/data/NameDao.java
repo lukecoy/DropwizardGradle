@@ -11,7 +11,7 @@ public interface NameDao {
   @SqlUpdate("INSERT INTO name (name, date_met) values (:name, :date_met)")
   int insert(@Bind("name") String name, @Bind("date_met") long dateMet);
 
-  @SqlQuery("SELECT name, date_met FROM name WHERE rowid >= :from AND rowid < :to")
+  @SqlQuery("SELECT name, date_met FROM name WHERE date_met >= :from AND date_met < :to")
   List<String> findNamesBetween(@Bind("from") int from, @Bind("to") int to);
 
 }
