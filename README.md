@@ -19,7 +19,7 @@
 > Note: You'll need to be running Java 8.  
 
 ###Resources
-######`[GET] /hello/name-range?from=[int]&to=[int]`
+######`[GET] /hello/name-range?from=[int(epoch)]&to=[int(epoch)]`
 
 ######`[PUT] /hello?name=[String]`
 
