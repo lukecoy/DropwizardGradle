@@ -13,6 +13,7 @@
 > cd Hello/
 > gradle run
 ```
+> Note: You'll need to be running Java 8. 
 
 ###Resources
 ######`[GET] /hello/name-range?from=[int]&to=[int]`
