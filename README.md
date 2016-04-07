@@ -12,7 +12,7 @@
 
 # Make a sqlite db
 > sqlite3 hello.db
-  > CREATE TABLE name(name, date_met);
+  > CREATE TABLE name(name, date_met INTEGER);
 
 > gradle run
 ```
